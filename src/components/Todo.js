@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 const Todo = (props) => {
   const [clicked, setClicked] = useState(false);
-  const deletehandler = async (e) => {
+  const deletehandler = (e) => {
     setClicked(true);
-    await setTimeout(() => {
+    setTimeout(() => {
       const newTodos = props.todos.filter((todo) => todo.id !== props.todo.id);
       props.setTodos([...newTodos]);
     }, 1000);
